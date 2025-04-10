@@ -1,7 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+import logging
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Required for flash messages
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Sample project data (could be from a database in a real app)
 projects = [
@@ -53,6 +61,14 @@ def contact():
         if len(message) > 500:
             flash('Message must be 500 characters or less!')
             return redirect(url_for('contact'))
+
+        # Log form details to terminal
+        logger.info("New Contact Form Submission:")
+        logger.info(f"Name: {name}")
+        logger.info(f"Email: {email}")
+        logger.info(f"Subject: {subject}")
+        logger.info(f"Message: {message}")
+        logger.info("-" * 50)  # Separator for readability
 
         return render_template('success.html', name=name, email=email, subject=subject, message=message)
     
