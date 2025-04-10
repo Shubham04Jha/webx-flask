@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+    <section class="portfolio-header">
+        <h1>My Portfolio</h1>
+        <p class="subtitle">A showcase of my best work and creative projects.</p>
+    </section>
+
+    <section class="portfolio">
+        <div class="project-grid">
+            {% for project in projects %}
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="project-img">
+                    <div class="project-info">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"[Your Name] delivered an outstanding project on time and exceeded expectations!"</p>
+                <h4>- John Doe, CEO</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"A true professional with a keen eye for detail."</p>
+                <h4>- Jane Smith, Designer</h4>
+            </div>
+        </div>
+    </section>
+{% endblock %}

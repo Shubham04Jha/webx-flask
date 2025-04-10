@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Success{% endblock %}
+{% block content %}
+    <h1>Thank You, {{ name }}!</h1>
+    <p>Your message has been received:</p>
+    <div class="success-details">
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Subject:</strong> {{ subject }}</p>
+        <p><strong>Message:</strong> {{ message }}</p>
+    </div>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+{% endblock %}
