@@ -1,59 +1,74 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="subtitle">Hi, I'm Kshitij Hundre, a passionate developer crafting digital experiences.</p>
-            <a href="#about" class="btn btn-primary">Learn More</a>
-            <a href="{{ url_for('portfolio') }}" class="btn btn-secondary">View Projects</a>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="Shubham Jha" class="profile-photo">
+            </div>
+            <div class="hero-text">
+                <h1>Hi, I'm Shubham</h1>
+                <p class="hero-subtile">A Software Developer and student passionate about solving problems and building impactful digital solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="{{ url_for('portfolio') }}" class="btn btn-secondary">My Work</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-container">
             <div class="about-card">
                 <h3>My Journey</h3>
-                <p>With over 2+ years of experience in web development, I specialize in MERN stack,training ML models and simplifying backend solutions.</p>
+                <p>I am a student and Software Developer with over 2+ years of experience in full-stack development, specializing in the MERN stack, backend solutions, and machine learning.</p>
             </div>
             <div class="about-card">
                 <h3>Skills</h3>
                 <ul>
-                    <li>Python & Flask</li>
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>Database Design</li>
+                    <li>Languages: Python, Java, JavaScript</li>
+                    <li>Frameworks: React, Node.js, Flask</li>
+                    <li>Database Design & Optimization</li>
                     <li>UI/UX Principles</li>
                 </ul>
             </div>
             <div class="about-card">
-                <h3>Interests</h3>
-                <p>I love trainig ML models,exploring new technlogies,contributing open-source projects, gaming, and building tools that solve real-world problems.</p>
+                <h3>Competitive Programming</h3>
+                <p>With a Codeforces rating of 1175 and 1780+ LeetCode rating (Top 8%), I have solved 650+ problems and secured 2nd Runner-Up in a DSA contest by Coding Ninjas.</p>
             </div>
         </div>
     </section>
 
+    <!-- Featured Stats Section -->
     <section class="stats">
-        <h2>My Stats</h2>
+        <h2>My Achievements</h2>
         <div class="stats-grid">
             <div class="stat-card">
-                <h3>10+</h3>
+                <h3>10+</</h3>
                 <p>Projects Completed</p>
             </div>
             <div class="stat-card">
-                <h3>2+</h3>
+                <h3>2+</</h3>
                 <p>Years of Experience</p>
             </div>
             <div class="stat-card">
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
+                <h3>1st</h3>
+                <p>Place in Ideathon</p>
+            </div>
+            <div class="stat-card">
+                <h3>1st</h3>
+                <p>Campus to Corporate (C2C) by ISTE VESIT</p>
             </div>
         </div>
     </section>
 
+    <!-- Call-to-Action Section -->
     <section class="cta">
-        <h2>Ready to Collaborate?</h2>
-        <p>Let’s build something amazing together!</p>
-        <a href="{{ url_for('contact') }}" class="btn btn-primary">Get in Touch</a>
+        <h2>Let’s Work Together</h2>
+        <p>Have a project in mind? Let’s collaborate and create something amazing!</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Me</a>
     </section>
 {% endblock %}

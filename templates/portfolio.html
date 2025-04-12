@@ -1,41 +1,83 @@
 {% extends "base.html" %}
 {% block title %}Portfolio{% endblock %}
 {% block content %}
+    <!-- Portfolio Header -->
     <section class="portfolio-header">
         <h1>My Portfolio</h1>
-        <p class="subtitle">A showcase of my best work and creative projects.</p>
+        <p class="subtitle" style="padding: 10px 0;">A showcase of my best work and creative projects.</p>
     </section>
 
+    <!-- Portfolio Projects -->
     <section class="portfolio">
         <div class="project-grid">
-            {% for project in projects %}
-                <div class="project-card">
-                    <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="project-img">
-                    <div class="project-info">
-                        <h3>{{ project.title }}</h3>
-                        <p>{{ project.description }}</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
+            <!-- Blog Website -->
+            <div class="project-card">
+                <a href="https://blog-website-six-flame.vercel.app/" target="_blank">
+                    <img src="{{ url_for('static', filename='images/blog-website.png') }}" alt="Blog Website" class="project-link-img">
+                </a>
+                <div class="project-info">
+                    <h3>Blog Website</h3>
+                    <p>A full-stack blog platform enabling seamless CRUD operations with secure JWT authentication.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">JWT</span>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+
+            <!-- AudioPod AI -->
+            <div class="project-card">
+                <a href="https://www.audiopod.ai/" target="_blank">
+                    <img src="{{ url_for('static', filename='images/audiopod-ai_main_page.png') }}" alt="Blog Website" class="project-link-img">
+                </a>
+                
+                <div class="project-info">
+                    <h3>AudioPod AI</h3>
+                    <p>Developed UI components and backend logic for lightweight data operations using Next.js and FastAPI.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Prisma</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Palcoa Solutions -->
+            <div class="project-card">
+                <a href="https://https://github.com/BrawlerXull/Palcoa-Infotech/" target="_blank">
+                    <img src="{{ url_for('static', filename='images/offsync-palcoa.png') }}" alt="Blog Website" class="project-link-img">
+                </a>
+                <div class="project-info">
+                    <h3>Palcoa Solutions</h3>
+                    <p>Designed a responsive UI for a PHP-based transaction system with AES encryption and offline support.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Crypto.js</span>
+                        <span class="tech-tag">IndexedDB</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">Dexie.js</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <h2>What Clients Say</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <p>"[Your Name] delivered an outstanding project on time and exceeded expectations!"</p>
-                <h4>- John Doe, CEO</h4>
+                <p>"Shubham consistently delivered reliable solutions and was a great team player throughout the project."</p>
+                <h4>- Gaurav Pandey, CTO at AudioPod</h4>
             </div>
             <div class="testimonial-card">
-                <p>"A true professional with a keen eye for detail."</p>
-                <h4>- Jane Smith, Designer</h4>
+                <p>"Shubham's technical expertise and proactive approach made a significant impact on our project."</p>
+                <h4>- Omkar Patil, CEO at Palcoa Solutions</h4>
             </div>
         </div>
     </section>

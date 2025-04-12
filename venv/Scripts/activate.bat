@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\91773\Desktop\SEM 6\WEB X\Portfolio\venv
+set VIRTUAL_ENV=C:\Users\Shubham\Documents\webx\shubham\WEBX-portfolio-website\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

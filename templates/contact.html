@@ -1,45 +1,50 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
 {% block content %}
-    <section class="contact-header">
-        <h1>Contact Me</h1>
-        <p class="subtitle">Have a question or want to work together? Drop me a message!</p>
-    </section>
+<section class="contact-hero">
+    <h1>Let’s Connect!</h1>
+    <p>Have a question, an opportunity, or just want to say hi? Feel free to reach out!</p>
+</section>
 
-    <section class="contact">
-        <div class="contact-container">
+<section class="contact-main">
+    <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Feel free to contact me via email or fill out the form. I’ll get back to you as soon as possible!</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:shubhamjha70491@gmail.com">shubhamjha70491@gmail.com</a></li>
+                <li><strong>Location:</strong> Mumbai, India</li>
+            </ul>
+            <!-- Add your image here -->
+            <div class="contact-image">
+                <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="Shubham Jha" class="profile-photo">
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
             <form method="POST" class="contact-form">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Subject">
+                    <input type="text" id="subject" name="subject" required placeholder="Say Hello!">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message (max 500 characters)</label>
-                    <textarea id="message" name="message" maxlength="500" required placeholder="Your Message"></textarea>
-                    <small class="char-count">Characters remaining: 500</small>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" maxlength="500" required placeholder="Write your message here..."></textarea>
+                    <small class="char-count">Up to 500 characters</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
-
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p><strong>Email:</strong> imkshitij2406@gmail.com</p>
-                <p><strong>Phone:</strong> +91-7738916133</p>
-                <p><strong>Location:</strong> Mumbai ,India</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/kshitij-hundre-b0a3602b0/" class="social-btn">LinkedIn</a>
-                    <a href="https://github.com/alchemist240" class="social-btn">GitHub</a>
-                    <a href="https://x.com/Dominator244" class="social-btn">Twitter</a>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
